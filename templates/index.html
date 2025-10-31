@@ -73,9 +73,22 @@
         <div class="result-box text-white 
             {% if prediksi == 'Terima' %} bg-success 
             {% else %} bg-danger {% endif %}">
+            
             <h4 class="text-center">HASIL REKOMENDASI SPK:</h4>
             <h1 class="text-center fw-bold">{{ prediksi | upper }}</h1>
             <hr>
+            
+            <h5 class="mt-4">Kriteria Pemohon:</h5>
+            {% if input_kriteria %}
+                <ul class="list-unstyled">
+                    <li>**Riwayat Kredit:** {{ input_kriteria.riwayat_kredit }}</li>
+                    <li>**Lama Usaha:** {{ input_kriteria.lama_usaha }}</li>
+                    <li>**Pendapatan/Bulan:** {{ input_kriteria.pendapatan }}</li>
+                    <li>**Jaminan (Agunan):** {{ input_kriteria.jaminan }}</li>
+                    <li>**Jumlah Pinjaman:** {{ input_kriteria.jumlah_pinjaman }}</li>
+                </ul>
+                <hr>
+            {% endif %}
             {% if probabilitas %}
             <p class="mb-1">Probabilitas **Terima**: **{{ probabilitas['Terima'] }}**</p>
             <p class="mb-0">Probabilitas **Tolak**: **{{ probabilitas['Tolak'] }}**</p>

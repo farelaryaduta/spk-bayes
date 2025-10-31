@@ -15,7 +15,7 @@ except FileNotFoundError:
     print("Error: File 'data/kredit_mikro.csv' tidak ditemukan. Pastikan Anda telah membuatnya di folder 'data'.")
     exit()
 
-# 2. Definisikan Kategori dan Feature (TETAP SAMA)
+# Definisikan Kategori dan Feature
 kategori_riwayat = ['Buruk', 'Cukup', 'Baik']
 kategori_lama = ['Kurang dari 1 Tahun', '1-3 Tahun', 'Lebih dari 3 Tahun']
 kategori_pendapatan = ['Rendah', 'Sedang', 'Tinggi']
@@ -36,7 +36,7 @@ target = 'Keputusan'
 X = df[fitur]
 y = df[target]
 
-# --- 3. Membangun Pipeline Model (TETAP SAMA) ---
+
 model_pipeline = Pipeline([
     ('encoder', OrdinalEncoder(categories=kategori_encoder)),
     ('classifier', CategoricalNB())
