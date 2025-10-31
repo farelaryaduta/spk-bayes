@@ -1,0 +1,157 @@
+Riwayat_Kredit,Lama_Usaha,Pendapatan_Bulan,Jaminan,Jumlah_Pinjaman,Keputusan
+Baik,1-3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Rendah,Ada,Sedang,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Buruk,1-3 Tahun,Sedang,Tidak Ada,Besar,Tolak
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Sedang,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Cukup,1-3 Tahun,Sedang,Tidak Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,Kurang dari 1 Tahun,Sedang,Tidak Ada,Kecil,Tolak
+Baik,1-3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,Lebih dari 3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Sedang,Tidak Ada,Kecil,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,Kurang dari 1 Tahun,Sedang,Tidak Ada,Kecil,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Baik,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Rendah,Ada,Sedang,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Buruk,1-3 Tahun,Sedang,Tidak Ada,Besar,Tolak
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Sedang,Tolak
+Cukup,Lebih dari 3 Tahun,Sedang,Ada,Kecil,Terima
+Baik,1-3 Tahun,Tinggi,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Tidak Ada,Kecil,Tolak
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Rendah,Ada,Sedang,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Buruk,1-3 Tahun,Sedang,Tidak Ada,Besar,Tolak
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Sedang,Tolak
+Baik,1-3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Rendah,Ada,Sedang,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Buruk,1-3 Tahun,Sedang,Tidak Ada,Besar,Tolak
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Sedang,Tolak
+Cukup,Lebih dari 3 Tahun,Sedang,Ada,Kecil,Terima
+Baik,1-3 Tahun,Tinggi,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Tidak Ada,Kecil,Tolak
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,1-3 Tahun,Rendah,Ada,Sedang,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Buruk,1-3 Tahun,Sedang,Tidak Ada,Besar,Tolak
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,1-3 Tahun,Rendah,Tidak Ada,Sedang,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Kecil,Terima
+Baik,1-3 Tahun,Sedang,Ada,Sedang,Terima
+Cukup,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Buruk,Lebih dari 3 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,1-3 Tahun,Tinggi,Ada,Besar,Terima
+Cukup,Lebih dari 3 Tahun,Sedang,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Baik,Lebih dari 3 Tahun,Tinggi,Ada,Sedang,Terima
+Cukup,1-3 Tahun,Sedang,Tidak Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,Lebih dari 3 Tahun,Sedang,Ada,Besar,Terima
+Baik,1-3 Tahun,Tinggi,Ada,Sedang,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Kecil,Tolak
+Cukup,Lebih dari 3 Tahun,Sedang,Tidak Ada,Besar,Tolak
+Baik,1-3 Tahun,Tinggi,Ada,Kecil,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,Lebih dari 3 Tahun,Sedang,Ada,Sedang,Terima
+Baik,1-3 Tahun,Tinggi,Ada,Besar,Terima
+Buruk,Kurang dari 1 Tahun,Rendah,Tidak Ada,Besar,Tolak
+Cukup,Lebih dari 3 Tahun,Sedang,Tidak Ada,Kecil,Tolak
+Baik,1-3 Tahun,Tinggi,Ada,Sedang,Terima

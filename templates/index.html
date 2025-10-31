@@ -1,13 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SPK Klasifikasi Kredit Mikro (Bayes)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .container { max-width: 700px; margin-top: 50px; }
+        .result-box { margin-top: 30px; padding: 20px; border-radius: 8px; }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <h2 class="text-center mb-4 text-primary">Sistem Pendukung Keputusan Kredit Mikro (Naïve Bayes)</h2>
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">Input Data Calon Peminjam</h5>
+                <form method="POST" action="/">
+                    
+                    <div class="mb-3">
+                        <label for="riwayat_kredit" class="form-label">Riwayat Kredit:</label>
+                        <select class="form-select" id="riwayat_kredit" name="riwayat_kredit" required>
+                            {% for opt in riwayat_opts %}
+                                <option value="{{ opt }}">{{ opt }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
 
-    <h1>Hello</h1>
+                    <div class="mb-3">
+                        <label for="lama_usaha" class="form-label">Lama Usaha Berjalan:</label>
+                        <select class="form-select" id="lama_usaha" name="lama_usaha" required>
+                            {% for opt in lama_opts %}
+                                <option value="{{ opt }}">{{ opt }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="pendapatan" class="form-label">Pendapatan/Bulan:</label>
+                        <select class="form-select" id="pendapatan" name="pendapatan" required>
+                            {% for opt in pendapatan_opts %}
+                                <option value="{{ opt }}">{{ opt }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="jaminan" class="form-label">Jaminan (Agunan):</label>
+                        <select class="form-select" id="jaminan" name="jaminan" required>
+                            {% for opt in jaminan_opts %}
+                                <option value="{{ opt }}">{{ opt }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="jumlah_pinjaman" class="form-label">Jumlah Pinjaman yang Diajukan:</label>
+                        <select class="form-select" id="jumlah_pinjaman" name="jumlah_pinjaman" required>
+                            {% for opt in pinjaman_opts %}
+                                <option value="{{ opt }}">{{ opt }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100 mt-3">Dapatkan Rekomendasi Keputusan</button>
+                </form>
+            </div>
+        </div>
+
+        {% if prediksi %}
+        <div class="result-box text-white 
+            {% if prediksi == 'Terima' %} bg-success 
+            {% else %} bg-danger {% endif %}">
+            <h4 class="text-center">HASIL REKOMENDASI SPK:</h4>
+            <h1 class="text-center fw-bold">{{ prediksi | upper }}</h1>
+            <hr>
+            {% if probabilitas %}
+            <p class="mb-1">Probabilitas **Terima**: **{{ probabilitas['Terima'] }}**</p>
+            <p class="mb-0">Probabilitas **Tolak**: **{{ probabilitas['Tolak'] }}**</p>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
