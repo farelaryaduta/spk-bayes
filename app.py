@@ -14,8 +14,13 @@ except FileNotFoundError:
     print("Error: File pipeline 'naive_bayes_pipeline.pkl' tidak ditemukan. Jalankan train_model_final.py terlebih dahulu.")
     exit()
 
-@app.route('/', methods=['GET', 'POST'])
-def index():
+@app.route('/')
+def landing():
+    """Landing page - homepage"""
+    return render_template('landing.html')
+
+@app.route('/classifier', methods=['GET', 'POST'])
+def classifier():
     prediksi = None
     probabilitas = None
     # --- VARIABEL BARU UNTUK MENYIMPAN INPUT KRITERIA ---
