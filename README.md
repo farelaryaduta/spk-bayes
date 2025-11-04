@@ -2,7 +2,7 @@
 
 <div align="center">
     <img src="static/images/bayes1.png"/>
-    <img src="static/images/bayes2.png"/>
-    <img src="static/images/bayes3.png"/>
+    <img src="static/images/bayes4.png"/>
+    <img src="static/images/bayes5.png"/>
 </div>
 
