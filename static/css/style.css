@@ -667,6 +667,401 @@ footer a:hover {
     color: #000000;
 }
 
+/* ============ PRESENTATION PAGE STYLES ============ */
+/* Smooth Scroll Animation */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fade In Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger Animation for Cards */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.stagger-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Long Text Section Styling */
+.text-section {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 56px 48px;
+    margin-bottom: 48px;
+    line-height: 1.9;
+    font-size: 1.0625rem;
+    color: #333333;
+    text-align: justify;
+}
+
+.text-section strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+.text-section em {
+    color: #666666;
+    font-style: italic;
+}
+
+/* Card Grid for Points */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    margin: 48px 0;
+}
+
+.info-card {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 40px 32px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #000000, #666666);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+    border-color: #000000;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.info-card:hover::before {
+    transform: scaleY(1);
+}
+
+.card-icon {
+    width: 64px;
+    height: 64px;
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover .card-icon {
+    background: #000000;
+    color: #ffffff;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.card-title {
+    font-size: 1.375rem;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.card-description {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.card-points {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-points li {
+    padding: 10px 0;
+    padding-left: 28px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.card-points li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/* Horizontal Scroll Container */
+.scroll-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 48px -24px;
+    padding: 24px;
+    scrollbar-width: thin;
+    scrollbar-color: #d0d0d0 #fafafa;
+}
+
+.scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: #fafafa;
+    border-radius: 10px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: #d0d0d0;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+.card-slider {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 16px;
+}
+
+.slide-card {
+    flex: 0 0 400px;
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 40px 32px;
+    transition: all 0.3s ease;
+}
+
+.slide-card:hover {
+    transform: translateY(-6px);
+    border-color: #000000;
+    box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+
+/* Math Formula Styling */
+.math-box {
+    background: #fafafa;
+    border: 2px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 32px 24px;
+    margin: 32px 0;
+    text-align: center;
+}
+
+.math-box .mjx-chtml {
+    font-size: 1.2rem !important;
+}
+
+.formula-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.formula-explanation {
+    margin-top: 16px;
+    font-size: 0.9375rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+/* Timeline Style */
+.timeline-container {
+    position: relative;
+    padding: 40px 0;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 48px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background: #000000;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.timeline-content {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+/* Data Table Enhanced */
+.data-table-container {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: 32px;
+    overflow: hidden;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin: 32px 0;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: #fafafa;
+    border: 1px solid #e8e8e8;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: #000000;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #000000;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 0.9375rem;
+    color: #666666;
+    font-weight: 600;
+}
+
+/* Table Styling */
+.enhanced-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 24px;
+}
+
+.enhanced-table thead th {
+    background: #000000;
+    color: #ffffff;
+    padding: 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.enhanced-table thead th:first-child {
+    border-radius: 10px 0 0 0;
+}
+
+.enhanced-table thead th:last-child {
+    border-radius: 0 10px 0 0;
+}
+
+.enhanced-table tbody td {
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+    color: #333333;
+    font-size: 0.9375rem;
+}
+
+.enhanced-table tbody tr:hover {
+    background: #fafafa;
+}
+
+.enhanced-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.badge-terima {
+    background: #dcfce7;
+    color: #16a34a;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.badge-tolak {
+    background: #fee2e2;
+    color: #dc2626;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #000000, #333333);
+    border-radius: 10px;
+    transition: width 1.5s ease-out;
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
     .hero {
@@ -754,5 +1149,29 @@ footer a:hover {
 
     .result-value {
         font-size: 2.25rem;
+    }
+    
+    /* Presentation page responsive */
+    .text-section {
+        padding: 32px 24px;
+        font-size: 1rem;
+        text-align: left;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .data-table-container {
+        padding: 24px 16px;
+    }
+    
+    .enhanced-table {
+        font-size: 0.875rem;
+    }
+    
+    .enhanced-table thead th,
+    .enhanced-table tbody td {
+        padding: 12px 8px;
     }
 }

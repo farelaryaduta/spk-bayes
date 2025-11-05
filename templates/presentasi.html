@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentasi - Naive Bayes untuk Kredit Mikro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    
+    <!-- ============ NAVBAR ============ -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-brain"></i> SPK Kredit
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/classifier">Klasifikasi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/presentasi">Presentasi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============ HERO SECTION ============ -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-presentation"></i>
+                Presentasi Project
+            </div>
+            <h1>Naive Bayes untuk Pemberian Saran pada Kredit Usaha Mikro</h1>
+            <p class="subtitle">
+                Sistem Pendukung Keputusan berbasis Machine Learning untuk mengklasifikasikan kelayakan kredit usaha mikro menggunakan algoritma Naive Bayes
+            </p>
+            <div class="hero-buttons">
+                <a href="#project-overview" class="btn-primary-solid">
+                    <i class="fas fa-arrow-down"></i>
+                    Mulai Presentasi
+                </a>
+                <a href="/classifier" class="btn-secondary-outline">
+                    <i class="fas fa-rocket"></i>
+                    Coba Aplikasi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECT OVERVIEW ============ -->
+    <section class="features" id="project-overview">
+        <div class="features-container">
+            <h2 class="section-title fade-in">Penjelasan Project</h2>
+            <p class="section-subtitle fade-in">
+                Sistem Pendukung Keputusan untuk Kredit Usaha Mikro
+            </p>
+            
+            <div class="text-section fade-in">
+                <p>
+                    Dalam dunia perbankan dan lembaga keuangan mikro, proses penilaian kelayakan kredit merupakan tantangan yang kompleks. 
+                    Setiap hari, petugas kredit harus mengevaluasi puluhan pengajuan dengan berbagai latar belakang finansial yang berbeda. 
+                    Proses manual ini rentan terhadap <strong>bias subjektif</strong> dan <strong>inkonsistensi penilaian</strong>, yang dapat 
+                    berakibat pada kerugian finansial atau hilangnya kesempatan bisnis.
+                </p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3 class="card-title">Problem Statement</h3>
+                    <p class="card-description">
+                        Tantangan utama dalam penilaian kredit mikro secara manual
+                    </p>
+                    <ul class="card-points">
+                        <li>Proses evaluasi memakan waktu berjam-jam per pengajuan</li>
+                        <li>Keputusan bergantung pada subjektivitas petugas individual</li>
+                        <li>Inkonsistensi penilaian antar petugas dan waktu</li>
+                        <li>Kesalahan penilaian berakibat kredit macet atau opportunity loss</li>
+                        <li>Tidak ada dokumentasi reasoning yang sistematis</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="card-title">Solusi Sistem</h3>
+                    <p class="card-description">
+                        Pendekatan Machine Learning untuk keputusan kredit yang objektif
+                    </p>
+                    <ul class="card-points">
+                        <li><strong>Algoritma Naive Bayes</strong> untuk klasifikasi probabilistik</li>
+                        <li><strong>5 Fitur Kategorik:</strong> Riwayat Kredit, Lama Usaha, Pendapatan, Jaminan, Jumlah Pinjaman</li>
+                        <li><strong>Output Binary:</strong> Terima atau Tolak dengan probabilitas</li>
+                        <li>Keputusan berbasis pola data historis yang tervalidasi</li>
+                        <li>Transparansi penuh dengan confidence score</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="card-title">Manfaat Implementasi</h3>
+                    <p class="card-description">
+                        Dampak nyata bagi operasional lembaga keuangan mikro
+                    </p>
+                    <ul class="card-points">
+                        <li><strong>Kecepatan:</strong> Dari berjam-jam menjadi &lt;100ms per prediksi</li>
+                        <li><strong>Objektif:</strong> Keputusan berbasis data, bukan intuisi</li>
+                        <li><strong>Konsisten:</strong> Input sama = output sama setiap waktu</li>
+                        <li><strong>Akurat:</strong> Divalidasi dengan 5-Fold Cross-Validation</li>
+                        <li><strong>Transparan:</strong> Probabilitas eksplisit untuk audit</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ NAIVE BAYES EXPLANATION ============ -->
+    <section class="how-it-works" id="naive-bayes">
+        <div class="how-container">
+            <h2 class="section-title fade-in">Bagaimana Naive Bayes Bekerja</h2>
+            <p class="section-subtitle fade-in">
+                Algoritma, formula matematika, dan implementasi teknis dalam project ini
+            </p>
+            
+            <div class="text-section fade-in">
+                <p>
+                    <strong>Naive Bayes</strong> adalah algoritma klasifikasi probabilistik berdasarkan <em>Teorema Bayes</em> dari abad ke-18. 
+                    Algoritma menghitung probabilitas data masuk ke kelas tertentu berdasarkan fitur-fiturnya, dengan asumsi <strong>independensi antar fitur</strong>. 
+                    Meski asumsi ini tidak selalu benar di dunia nyata, Naive Bayes tetap powerful untuk klasifikasi data kategorik.
+                </p>
+            </div>
+            
+            <!-- Formula Matematika Teorema Bayes -->
+            <div class="math-box fade-in">
+                <div class="formula-label">Teorema Bayes</div>
+                $$P(\text{Class}|\text{Features}) = \frac{P(\text{Features}|\text{Class}) \times P(\text{Class})}{P(\text{Features})}$$
+                <div class="formula-explanation">
+                    <strong>Posterior Probability</strong> = (Likelihood × Prior) / Evidence<br>
+                    Probabilitas kelas given fitur = (Probabilitas fitur given kelas × Probabilitas kelas) / Probabilitas fitur
+                </div>
+            </div>
+            
+            <!-- Formula Naive Bayes Classifier -->
+            <div class="math-box fade-in">
+                <div class="formula-label">Naive Bayes Classifier</div>
+                $$P(y|x_1, x_2, ..., x_n) = \frac{P(y) \prod_{i=1}^{n} P(x_i|y)}{P(x_1, x_2, ..., x_n)}$$
+                <div class="formula-explanation">
+                    Di mana \(y\) adalah kelas (Terima/Tolak) dan \(x_1, x_2, ..., x_n\) adalah fitur input<br>
+                    <strong>Asumsi independensi:</strong> \(P(x_1, x_2, ..., x_n|y) = P(x_1|y) \times P(x_2|y) \times ... \times P(x_n|y)\)
+                </div>
+            </div>
+            
+            <!-- Horizontal Scroll Cards untuk Implementasi -->
+            <h3 style="text-align: center; font-weight: 800; margin: 64px 0 24px; color: #000000;">
+                <i class="fas fa-cogs"></i> Implementasi Teknis
+            </h3>
+            <p style="text-align: center; color: #666; margin-bottom: 32px;">
+                Scroll ke samping untuk melihat detail implementasi →
+            </p>
+            
+            <div class="scroll-container">
+                <div class="card-slider">
+                    <div class="slide-card">
+                        <div class="card-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="card-title">Categorical Naive Bayes</h3>
+                        <p class="card-description">
+                            Varian khusus Scikit-learn untuk data kategorik diskrit
+                        </p>
+                        <ul class="card-points">
+                            <li>Menggunakan <strong>CategoricalNB</strong> dari Scikit-learn</li>
+                            <li>Optimal untuk fitur kategorik (Buruk/Cukup/Baik, Kecil/Sedang/Besar)</li>
+                            <li>Distribusi multinomial untuk probabilitas kategori</li>
+                            <li>Tidak ada asumsi distribusi normal seperti GaussianNB</li>
+                            <li>Perfect fit untuk 5 fitur kategorik sistem kredit</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="slide-card">
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="card-title">Preprocessing Pipeline</h3>
+                        <p class="card-description">
+                            Transformasi data sebelum masuk ke classifier
+                        </p>
+                        <ul class="card-points">
+                            <li><strong>OrdinalEncoder:</strong> Konversi kategori → angka ordinal</li>
+                            <li>Contoh mapping: Buruk=0, Cukup=1, Baik=2</li>
+                            <li>Encoding konsisten untuk training & prediksi baru</li>
+                            <li>Pipeline otomatis dengan Scikit-learn</li>
+                            <li>Memastikan preprocessing yang persis sama setiap kali</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="slide-card">
+                        <div class="card-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="card-title">Training Dataset</h3>
+                        <p class="card-description">
+                            Data historis berkualitas untuk pembelajaran model
+                        </p>
+                        <ul class="card-points">
+                            <li><strong>{{ stats.total_data if stats else '157' }} records</strong> data kredit historis yang dikurasi</li>
+                            <li>5 fitur kategorik: Riwayat, Lama Usaha, Pendapatan, Jaminan, Jumlah</li>
+                            <li>Label: Terima ({{ stats.persentase_terima if stats else '59' }}%) / Tolak ({{ stats.persentase_tolak if stats else '41' }}%)</li>
+                            <li>Dataset seimbang untuk learning optimal</li>
+                            <li>Keputusan dari tim analis kredit profesional</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="slide-card">
+                        <div class="card-icon">
+                            <i class="fas fa-check-double"></i>
+                        </div>
+                        <h3 class="card-title">5-Fold Cross-Validation</h3>
+                        <p class="card-description">
+                            Validasi ketat untuk mencegah overfitting
+                        </p>
+                        <ul class="card-points">
+                            <li><strong>Stratified K-Fold:</strong> Data dibagi 5 bagian equal</li>
+                            <li>Training pada 4 fold (80%), testing pada 1 fold (20%)</li>
+                            <li>Diulang 5× dengan kombinasi fold berbeda</li>
+                            <li>Stratified: proporsi kelas Terima/Tolak seimbang per fold</li>
+                            <li>Menghasilkan metrik yang reliable dan representatif</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="slide-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3 class="card-title">Prediction Pipeline</h3>
+                        <p class="card-description">
+                            Alur dari input user hingga keputusan real-time
+                        </p>
+                        <ul class="card-points">
+                            <li><strong>Step 1:</strong> User input 5 kriteria via web form</li>
+                            <li><strong>Step 2:</strong> OrdinalEncoder transform kategori ke numerik</li>
+                            <li><strong>Step 3:</strong> CategoricalNB hitung P(Terima|Input) & P(Tolak|Input)</li>
+                            <li><strong>Step 4:</strong> Output keputusan + probabilitas kedua kelas</li>
+                            <li><strong>Waktu:</strong> &lt;100ms per prediksi (real-time)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="slide-card">
+                        <div class="card-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="card-title">Transparansi & Interpretability</h3>
+                        <p class="card-description">
+                            Explainable AI untuk keputusan yang dipercaya
+                        </p>
+                        <ul class="card-points">
+                            <li>Kedua probabilitas (Terima & Tolak) ditampilkan eksplisit</li>
+                            <li>Contoh: "Terima 87.3%, Tolak 12.7%" → high confidence</li>
+                            <li>Contoh: "Terima 52%, Tolak 48%" → borderline, perlu review</li>
+                            <li>Memungkinkan audit dan understanding reasoning</li>
+                            <li>Sesuai prinsip Responsible AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card Grid untuk Keunggulan dan Asumsi -->
+            <div class="card-grid" style="margin-top: 64px;">
+                <div class="info-card stagger-item" style="background: #f0fdf4; border-color: #86efac;">
+                    <div class="card-icon" style="background: #dcfce7; border-color: #86efac;">
+                        <i class="fas fa-thumbs-up" style="color: #16a34a;"></i>
+                    </div>
+                    <h3 class="card-title" style="color: #16a34a;">Keunggulan Naive Bayes</h3>
+                    <p class="card-description">
+                        Mengapa algoritma ini perfect untuk kredit mikro
+                    </p>
+                    <ul class="card-points">
+                        <li><strong>Sangat cepat:</strong> Training dan inference &lt;100ms per prediksi</li>
+                        <li><strong>Excellent untuk kategorik:</strong> CategoricalNB dirancang untuk tipe data ini</li>
+                        <li><strong>Dataset kecil OK:</strong> Tidak membutuhkan ribuan data seperti deep learning</li>
+                        <li><strong>Probabilitas eksplisit:</strong> Interpretable dan explainable</li>
+                        <li><strong>Simple namun powerful:</strong> Trade-off yang balanced</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <h3 class="card-title">Asumsi Independence</h3>
+                    <p class="card-description">
+                        "Naif" tapi tetap bekerja baik dalam praktik
+                    </p>
+                    <ul class="card-points">
+                        <li>Naive Bayes mengasumsikan semua fitur <strong>independen</strong> satu sama lain</li>
+                        <li>Contoh asumsi: Riwayat Kredit tidak berpengaruh pada Lama Usaha</li>
+                        <li>Kenyataan: Fitur mungkin berkorelasi (pendapatan tinggi ↔ riwayat baik)</li>
+                        <li>Meskipun "naif", algoritma tetap performa baik untuk klasifikasi</li>
+                        <li>Trade-off: Simplicity & speed vs perfect accuracy</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="card-title">Real-World Application</h3>
+                    <p class="card-description">
+                        Implementasi di lembaga keuangan mikro
+                    </p>
+                    <ul class="card-points">
+                        <li><strong>Use case:</strong> Approval kredit mikro on-the-spot di kantor cabang</li>
+                        <li><strong>Scalability:</strong> Dapat memproses ratusan pengajuan per jam</li>
+                        <li><strong>Integration:</strong> Web interface yang user-friendly untuk petugas</li>
+                        <li><strong>Decision support:</strong> Rekomendasi sistem + judgment petugas</li>
+                        <li><strong>Production-ready:</strong> Model disimpan (.pkl) untuk loading instant</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DATASET VISUALIZATION ============ -->
+    <section class="metrics" id="dataset">
+        <div class="metrics-container">
+            <h2 class="section-title fade-in">Visualisasi Train Dataset</h2>
+            <p class="section-subtitle fade-in">
+                Analisis mendalam data training yang digunakan untuk melatih model
+            </p>
+            
+            <div class="text-section fade-in">
+                <p>
+                    Dataset yang digunakan untuk melatih sistem ini merupakan kumpulan data historis pengajuan kredit mikro yang telah dikurasi dan divalidasi 
+                    dengan cermat. Dataset terdiri dari <strong>{{ stats.total_data if stats else '157' }} records</strong> berkualitas tinggi, mencakup berbagai 
+                    profil peminjam dengan karakteristik beragam. Setiap record merepresentasikan keputusan oleh tim analis kredit profesional, menjadi 
+                    <strong>ground truth</strong> yang reliable untuk pembelajaran model.
+                </p>
+            </div>
+            
+            <!-- Card Grid untuk Insight Dataset -->
+            <div class="card-grid" style="margin-top: 40px;">
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3 class="card-title">Distribusi Kelas Seimbang</h3>
+                    <p class="card-description">
+                        Rasio approval ideal untuk learning yang optimal
+                    </p>
+                    <ul class="card-points">
+                        <li><strong style="color: #16a34a;">{{ stats.terima if stats else '93' }} Terima ({{ stats.persentase_terima if stats else '59.2' }}%)</strong> 
+                        vs <strong style="color: #dc2626;">{{ stats.tolak if stats else '64' }} Tolak ({{ stats.persentase_tolak if stats else '40.8' }}%)</strong></li>
+                        <li>Dataset relatif <strong>seimbang</strong>, tidak bias ke salah satu kelas</li>
+                        <li>Rasio 60:40 adalah sweet spot untuk klasifikasi binary</li>
+                        <li>Mencegah model menjadi bias hanya memprediksi mayoritas</li>
+                        <li>Model dapat belajar pola dari kedua kelas dengan baik</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-list-check"></i>
+                    </div>
+                    <h3 class="card-title">5 Fitur Klasifikasi</h3>
+                    <p class="card-description">
+                        Faktor kunci dalam penilaian kredit mikro
+                    </p>
+                    <ul class="card-points">
+                        <li><strong>Riwayat Kredit:</strong> Track record pembayaran (Buruk, Cukup, Baik)</li>
+                        <li><strong>Lama Usaha:</strong> Stabilitas bisnis (&lt;1 tahun, 1-3 tahun, &gt;3 tahun)</li>
+                        <li><strong>Pendapatan/Bulan:</strong> Kapasitas finansial (Rendah, Sedang, Tinggi)</li>
+                        <li><strong>Jaminan:</strong> Risk mitigation (Ada, Tidak Ada)</li>
+                        <li><strong>Jumlah Pinjaman:</strong> Nominal relatif (Kecil, Sedang, Besar)</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-sitemap"></i>
+                    </div>
+                    <h3 class="card-title">Keragaman Kombinasi Fitur</h3>
+                    <p class="card-description">
+                        Pola nuansa dalam keputusan kredit
+                    </p>
+                    <ul class="card-points">
+                        <li>Riwayat kurang baik + Jaminan kuat + Pendapatan tinggi → <strong style="color: #16a34a;">Terima</strong></li>
+                        <li>Riwayat baik + Pinjaman terlalu besar untuk pendapatan → <strong style="color: #dc2626;">Tolak</strong></li>
+                        <li>Model belajar <strong>nuansa</strong>, bukan hanya aturan sederhana</li>
+                        <li>Kombinasi fitur lebih penting daripada fitur individual</li>
+                        <li>Mencerminkan kompleksitas keputusan kredit di dunia nyata</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card-grid" style="margin-top: 32px;">
+                <div class="info-card stagger-item" style="background: #f0fdf4; border-color: #86efac;">
+                    <div class="card-icon" style="background: #dcfce7; border-color: #86efac;">
+                        <i class="fas fa-broom" style="color: #16a34a;"></i>
+                    </div>
+                    <h3 class="card-title" style="color: #16a34a;">Data Cleaning & Quality</h3>
+                    <p class="card-description">
+                        Preprocessing ketat untuk data berkualitas
+                    </p>
+                    <ul class="card-points">
+                        <li><strong>No missing values:</strong> Semua record complete dan valid</li>
+                        <li><strong>No duplicates:</strong> Setiap record unik dan independent</li>
+                        <li><strong>Standardized categories:</strong> Tidak ada typo atau inkonsistensi</li>
+                        <li><strong>Validated labels:</strong> Keputusan dari expert, bukan arbitrary</li>
+                        <li><strong>Ready for encoding:</strong> OrdinalEncoder dapat bekerja smooth</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="card-title">Exploratory Data Analysis</h3>
+                    <p class="card-description">
+                        Insight dari distribusi dan korelasi fitur
+                    </p>
+                    <ul class="card-points">
+                        <li>Riwayat Kredit <strong>"Baik"</strong> → tingkat approval jauh lebih tinggi</li>
+                        <li>Usaha <strong>&gt;3 tahun</strong> → lebih dipercaya dibanding baru mulai</li>
+                        <li><strong>Jaminan ada</strong> → signifikan meningkatkan approval untuk pinjaman besar</li>
+                        <li>Pendapatan tinggi → kompensasi riwayat kurang baik dalam beberapa kasus</li>
+                        <li>Insight memvalidasi pilihan fitur dan meaningful pattern</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card stagger-item">
+                    <div class="card-icon">
+                        <i class="fas fa-lock-open"></i>
+                    </div>
+                    <h3 class="card-title">Transparency & Reproducibility</h3>
+                    <p class="card-description">
+                        Best practice untuk aplikasi kritis
+                    </p>
+                    <ul class="card-points">
+                        <li>Dataset lengkap tersedia untuk <strong>audit</strong> dan analisis</li>
+                        <li>Dokumentasi lengkap untuk setiap fitur dan kategori</li>
+                        <li>Prinsip <strong>Responsible AI</strong> untuk keputusan finansial</li>
+                        <li>Reproducible: preprocessing dan training dapat di-replicate</li>
+                        <li>Compliance dengan regulasi dan best practice industri</li>
+                    </ul>
+                </div>
+            </div>
+            
+            {% if error %}
+            <div class="alert alert-danger" role="alert" style="background: #fef2f2; border: 1px solid #fca5a5; border-radius: 12px; padding: 16px; color: #dc2626;">
+                <i class="fas fa-exclamation-triangle"></i> Error loading data: {{ error }}
+            </div>
+            {% else %}
+            
+            <!-- Statistik Umum -->
+            <div class="stats-grid stagger-item">
+                <div class="stat-card">
+                    <div class="stat-number">{{ stats.total_data }}</div>
+                    <div class="stat-label">Total Data Training</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+                <div class="stat-card" style="background: #f0fdf4; border-color: #86efac;">
+                    <div class="stat-number" style="color: #16a34a;">{{ stats.terima }}</div>
+                    <div class="stat-label" style="color: #16a34a;">Pengajuan Diterima</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{ stats.persentase_terima }}%; background: #22c55e;"></div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #16a34a; margin-top: 8px; font-weight: 600;">{{ stats.persentase_terima }}%</p>
+                </div>
+                <div class="stat-card" style="background: #fef2f2; border-color: #fca5a5;">
+                    <div class="stat-number" style="color: #dc2626;">{{ stats.tolak }}</div>
+                    <div class="stat-label" style="color: #dc2626;">Pengajuan Ditolak</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: {{ stats.persentase_tolak }}%; background: #ef4444;"></div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #dc2626; margin-top: 8px; font-weight: 600;">{{ stats.persentase_tolak }}%</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">{{ stats.fitur_count }}</div>
+                    <div class="stat-label">Fitur Klasifikasi</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preview Dataset -->
+            <div class="data-table-container stagger-item">
+                <h3 style="text-align: center; font-weight: 800; margin-bottom: 8px; color: #000000;">
+                    <i class="fas fa-table"></i> Sample Data Training
+                </h3>
+                <p style="text-align: center; color: #666666; margin-bottom: 32px;">
+                    Berikut adalah 10 record pertama dari dataset yang digunakan untuk training model
+                </p>
+                <div style="overflow-x: auto;">
+                    <table class="enhanced-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 50px;">#</th>
+                                <th>Riwayat Kredit</th>
+                                <th>Lama Usaha</th>
+                                <th>Pendapatan/Bulan</th>
+                                <th>Jaminan</th>
+                                <th>Jumlah Pinjaman</th>
+                                <th style="text-align: center;">Keputusan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for row in dataset_preview %}
+                            <tr>
+                                <td><strong>{{ loop.index }}</strong></td>
+                                <td>{{ row['Riwayat_Kredit'] }}</td>
+                                <td>{{ row['Lama_Usaha'] }}</td>
+                                <td>{{ row['Pendapatan_Bulan'] }}</td>
+                                <td>{{ row['Jaminan'] }}</td>
+                                <td>{{ row['Jumlah_Pinjaman'] }}</td>
+                                <td style="text-align: center;">
+                                    {% if row['Keputusan'] == 'Terima' %}
+                                    <span class="badge-terima">
+                                        <i class="fas fa-check-circle"></i> Terima
+                                    </span>
+                                    {% else %}
+                                    <span class="badge-tolak">
+                                        <i class="fas fa-times-circle"></i> Tolak
+                                    </span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div style="text-align: center; margin-top: 32px;">
+                    <a href="{{ url_for('view_dataset', filename='kredit_mikro.csv') }}" 
+                       class="btn-primary-solid" target="_blank">
+                        <i class="fas fa-file-csv"></i> Lihat Dataset Lengkap ({{ stats.total_data }} Records)
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- ============ TECH STACK ============ -->
+    <section class="metrics">
+        <div class="metrics-container">
+            <h2 class="section-title">Teknologi yang Digunakan</h2>
+            <p class="section-subtitle">
+                Stack teknologi modern untuk machine learning dan web development
+            </p>
+            
+            <div class="tech-grid" style="max-width: 900px; margin: 64px auto 0;">
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fab fa-python"></i></div>
+                    <p><strong>Python 3</strong></p>
+                    <p style="font-size: 0.8125rem; color: #999; margin-top: 4px;">Core Language</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fas fa-flask"></i></div>
+                    <p><strong>Flask</strong></p>
+                    <p style="font-size: 0.8125rem; color: #999; margin-top: 4px;">Web Framework</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fas fa-brain"></i></div>
+                    <p><strong>Scikit-learn</strong></p>
+                    <p style="font-size: 0.8125rem; color: #999; margin-top: 4px;">Machine Learning</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fas fa-database"></i></div>
+                    <p><strong>Pandas</strong></p>
+                    <p style="font-size: 0.8125rem; color: #999; margin-top: 4px;">Data Processing</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fab fa-html5"></i></div>
+                    <p><strong>HTML/CSS</strong></p>
+                    <p style="font-size: 0.8125rem; color: #999; margin-top: 4px;">Frontend</p>
+                </div>
+                <div class="tech-item">
+                    <div class="tech-icon"><i class="fab fa-bootstrap"></i></div>
+                    <p><strong>Bootstrap 5</strong></p>
+                    <p style="font-size: 0.8125rem; color: #999; margin-top: 4px;">UI Framework</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA SECTION ============ -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2>Coba Aplikasi Sekarang</h2>
+            <p>
+                Gunakan sistem klasifikasi kredit mikro dan dapatkan rekomendasi keputusan yang akurat 
+                berdasarkan algoritma Naive Bayes dalam hitungan detik
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="/classifier" class="btn-primary-solid">
+                    <i class="fas fa-rocket"></i> Coba Aplikasi
+                </a>
+                <a href="/" class="btn-secondary-outline">
+                    <i class="fas fa-home"></i> Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer>
+        <div class="container-fluid px-4">
+            <p>&copy; 2025 SPK Kredit Mikro • Naive Bayes untuk Pemberian Saran pada Kredit Usaha Mikro</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Smooth Scroll Animation on Scroll
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        // Stagger animation for items
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stagger-item').forEach(el => staggerObserver.observe(el));
+        
+        // Animate progress bars when visible
+        const progressObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const fills = entry.target.querySelectorAll('.progress-fill');
+                    fills.forEach(fill => {
+                        const width = fill.style.width;
+                        fill.style.width = '0%';
+                        setTimeout(() => {
+                            fill.style.width = width;
+                        }, 200);
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.stats-grid').forEach(el => progressObserver.observe(el));
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

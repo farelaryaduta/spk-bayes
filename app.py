@@ -27,6 +27,65 @@ def landing():
     """Landing page - homepage"""
     return render_template('landing.html')
 
+@app.route('/presentasi')
+def presentasi():
+    """Halaman presentasi untuk menjelaskan project dan Naive Bayes"""
+    try:
+        # Load dataset untuk visualisasi
+        df = pd.read_csv('data/kredit_mikro.csv')
+        
+        # Hitung statistik dataset
+        stats = {
+            'total_data': len(df),
+            'terima': len(df[df['Keputusan'] == 'Terima']),
+            'tolak': len(df[df['Keputusan'] == 'Tolak']),
+            'fitur_count': len(df.columns) - 1,
+            'persentase_terima': round(len(df[df['Keputusan'] == 'Terima']) / len(df) * 100, 1),
+            'persentase_tolak': round(len(df[df['Keputusan'] == 'Tolak']) / len(df) * 100, 1)
+        }
+        
+        # Distribusi keputusan
+        distribusi = df['Keputusan'].value_counts().to_dict()
+        
+        # Statistik per fitur
+        fitur_stats = {}
+        fitur_list = ['Riwayat_Kredit', 'Lama_Usaha', 'Pendapatan_Bulan', 'Jaminan', 'Jumlah_Pinjaman']
+        
+        for fitur in fitur_list:
+            fitur_data = {}
+            for kategori in df[fitur].unique():
+                df_kategori = df[df[fitur] == kategori]
+                fitur_data[kategori] = {
+                    'total': len(df_kategori),
+                    'terima': len(df_kategori[df_kategori['Keputusan'] == 'Terima']),
+                    'tolak': len(df_kategori[df_kategori['Keputusan'] == 'Tolak'])
+                }
+            fitur_stats[fitur] = fitur_data
+        
+        # Preview dataset (10 data pertama)
+        dataset_preview = df.head(10).to_dict('records')
+        
+        # Ambil kategori dari encoder untuk ditampilkan
+        kategori = {
+            'riwayat_kredit': list(encoder.categories_[0]),
+            'lama_usaha': list(encoder.categories_[1]),
+            'pendapatan_bulan': list(encoder.categories_[2]),
+            'jaminan': list(encoder.categories_[3]),
+            'jumlah_pinjaman': list(encoder.categories_[4])
+        }
+        
+        return render_template(
+            'presentasi.html',
+            stats=stats,
+            distribusi=distribusi,
+            fitur_stats=fitur_stats,
+            dataset_preview=dataset_preview,
+            kategori=kategori
+        )
+    except Exception as e:
+        print(f"Error loading presentation data: {e}")
+        return render_template('presentasi.html', error=str(e))
+
 @app.route('/classifier', methods=['GET', 'POST'])
 def classifier():
     prediksi = None
