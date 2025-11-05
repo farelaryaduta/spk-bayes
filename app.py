@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory, Response
 import joblib
 import numpy as np
+import pandas as pd 
 
 app = Flask(__name__)
-
 
 
 try:
@@ -13,6 +13,14 @@ try:
 except FileNotFoundError:
     print("Error: File pipeline 'naive_bayes_pipeline.pkl' tidak ditemukan. Jalankan train_model_final.py terlebih dahulu.")
     exit()
+    
+@app.route('/data/<path:filename>')
+def view_dataset(filename):
+    file_path = f"data/{filename}"
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = f.read()
+    
+    return Response(data, mimetype='text/plain')
 
 @app.route('/')
 def landing():
@@ -23,31 +31,36 @@ def landing():
 def classifier():
     prediksi = None
     probabilitas = None
-    # --- VARIABEL BARU UNTUK MENYIMPAN INPUT KRITERIA ---
     input_kriteria = None 
 
     if request.method == 'POST':
-        
+        # 1. Ambil Input dari Formulir
         data_input = {
-            'riwayat_kredit': request.form['riwayat_kredit'],
-            'lama_usaha': request.form['lama_usaha'],
-            'pendapatan': request.form['pendapatan'],
-            'jaminan': request.form['jaminan'],
-            'jumlah_pinjaman': request.form['jumlah_pinjaman']
+            'Riwayat_Kredit': request.form['riwayat_kredit'],
+            'Lama_Usaha': request.form['lama_usaha'],
+            'Pendapatan_Bulan': request.form['pendapatan'],
+            'Jaminan': request.form['jaminan'],
+            'Jumlah_Pinjaman': request.form['jumlah_pinjaman']
         }
         
-        
+        # Simpan input kriteria untuk ditampilkan di HTML
         input_kriteria = data_input 
-        
-        # Ubah data input menjadi array untuk prediksi
         input_values = list(data_input.values())
-        input_array = np.array([input_values])
         
-        # 2. Prediksi dan Probabilitas
-        prediksi_kelas = pipeline.predict(input_array)[0]
-        proba = pipeline.predict_proba(input_array)[0]
         
-        # 3. Hitung Probabilitas
+        fitur = ['Riwayat_Kredit', 'Lama_Usaha', 'Pendapatan_Bulan', 'Jaminan', 'Jumlah_Pinjaman']
+        
+        # 2. Ubah Input menjadi Pandas DataFrame sementara
+    
+        input_df = pd.DataFrame([input_values], columns=fitur)
+        
+        # 3. Prediksi dan Probabilitas menggunakan DataFrame
+        prediksi_kelas = pipeline.predict(input_df)[0]
+        proba = pipeline.predict_proba(input_df)[0]
+        
+        
+        
+        # 4. Hitung Probabilitas
         classes = pipeline.named_steps['classifier'].classes_
         idx_terima = np.where(classes == 'Terima')[0][0]
         idx_tolak = np.where(classes == 'Tolak')[0][0]
@@ -66,9 +79,8 @@ def classifier():
         'index.html', 
         prediksi=prediksi, 
         probabilitas=probabilitas,
-        
         input_kriteria=input_kriteria,
-        
+        # Daftar opsi untuk digunakan di HTML
         riwayat_opts=encoder.categories_[0],
         lama_opts=encoder.categories_[1],
         pendapatan_opts=encoder.categories_[2],
