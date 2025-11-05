@@ -1,11 +1,11 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory, Response
 import joblib
 import numpy as np
-import pandas as pd # <--- PASTIKAN INI ADA
+import pandas as pd 
 
 app = Flask(__name__)
 
-# Muat Pipeline (yang berisi Encoder dan Model)
+
 try:
     pipeline = joblib.load('model/naive_bayes_pipeline.pkl')
     encoder = pipeline.named_steps['encoder']
@@ -13,6 +13,14 @@ try:
 except FileNotFoundError:
     print("Error: File pipeline 'naive_bayes_pipeline.pkl' tidak ditemukan. Jalankan train_model_final.py terlebih dahulu.")
     exit()
+    
+@app.route('/data/<path:filename>')
+def view_dataset(filename):
+    file_path = f"data/{filename}"
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = f.read()
+    
+    return Response(data, mimetype='text/plain')
 
 @app.route('/')
 def landing():
@@ -39,20 +47,18 @@ def classifier():
         input_kriteria = data_input 
         input_values = list(data_input.values())
         
-        # --- PERBAIKAN UNTUK MENGHILANGKAN WARNING ---
         
-        # Definisikan nama fitur (harus sama persis dengan yang ada di train_model)
         fitur = ['Riwayat_Kredit', 'Lama_Usaha', 'Pendapatan_Bulan', 'Jaminan', 'Jumlah_Pinjaman']
         
         # 2. Ubah Input menjadi Pandas DataFrame sementara
-        # Ini memberikan NAMA KOLOM (feature names) ke data input
+    
         input_df = pd.DataFrame([input_values], columns=fitur)
         
         # 3. Prediksi dan Probabilitas menggunakan DataFrame
         prediksi_kelas = pipeline.predict(input_df)[0]
         proba = pipeline.predict_proba(input_df)[0]
         
-        # --- AKHIR PERBAIKAN ---
+        
         
         # 4. Hitung Probabilitas
         classes = pipeline.named_steps['classifier'].classes_
@@ -68,7 +74,7 @@ def classifier():
             'Tolak': f"{prob_tolak:.2f}%"
         }
 
-    # Render template
+    
     return render_template(
         'index.html', 
         prediksi=prediksi, 

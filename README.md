@@ -6,3 +6,5 @@
     <img src="static/images/bayes5.png"/>
 </div>
 
+- [Visit Website](https://kreditbayes.vercel.app/)
+
